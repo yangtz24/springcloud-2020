@@ -1,0 +1,5 @@
+com\ytz\springcloud\common\ResultCode.class
+com\ytz\springcloud\entities\Payment.class
+com\ytz\springcloud\common\IErrorCode.class
+com\ytz\springcloud\common\CommonPage.class
+com\ytz\springcloud\common\CommonResult.class

@@ -1,13 +1,4 @@
-/**
- * Copyright © 2019 国网信通产业集团. All rights reserved.
- *
- * @Title:PaymentApplication.java
- * @Prject: com.ytz.springcloud
- * @Package: com.ytz.springcloud
- * @author: yangtianzeng
- * @date: 2020/3/18 22:56
- * @version: V1.0
- */
+
 package com.ytz.springcloud;
 
 import org.springframework.boot.SpringApplication;
