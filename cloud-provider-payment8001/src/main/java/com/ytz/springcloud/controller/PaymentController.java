@@ -1,13 +1,3 @@
-/**
- * Copyright © 2019 国网信通产业集团. All rights reserved.
- *
- * @Title:PaymentController.java
- * @Prject: com.ytz.springcloud.controller
- * @Package: com.ytz.springcloud.controller
- * @author: yangtianzeng
- * @date: 2020/3/18 13:50
- * @version: V1.0
- */
 package com.ytz.springcloud.controller;
 
 import com.ytz.springcloud.common.CommonResult;

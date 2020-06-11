@@ -28,25 +28,11 @@ hs_err_pid*
 ### Example user template
 
 # IntelliJ project files
-.idea
+.idea/
+.idea/**/*.xml
 *.iml
 out
 gen
-.gitignore
-cloud-api-common/src/main/resources/
-cloud-api-common/src/test/
-cloud-api-common/target/generated-sources/
-cloud-consumer-order80/src/test/
-cloud-consumer-order80/target/
-cloud-consumerzk-order80/src/test/
-cloud-consumerzk-order80/target/
-cloud-eureka-server7001/src/test/
-cloud-eureka-server7001/target/
-cloud-eureka-server7002/src/test/
-cloud-eureka-server7002/target/
-cloud-provider-payment8001/src/test/
-cloud-provider-payment8001/target/
-cloud-provider-payment8002/src/test/
-cloud-provider-payment8002/target/
-cloud-provider-payment8004/src/test/
-cloud-provider-payment8004/target/
+
+# Maven #
+target/
