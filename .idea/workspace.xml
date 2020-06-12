@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d28162ba-d6e2-430c-962e-287e80fe3067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/cloud-eureka-server7002/target/" />
@@ -36,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="208">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -152,7 +151,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore" />
+    <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="F:/dianxin_repository/platform" />
@@ -311,7 +310,7 @@
       <workItem from="1591620459997" duration="3511000" />
       <workItem from="1591793453554" duration="834000" />
       <workItem from="1591794330229" duration="253000" />
-      <workItem from="1591925546791" duration="1952000" />
+      <workItem from="1591925546791" duration="2222000" />
     </task>
     <task id="LOCAL-00001" summary="项目调整">
       <created>1591864615727</created>
@@ -334,11 +333,18 @@
       <option name="project" value="LOCAL" />
       <updated>1591871221570</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ignoreFIle">
+      <created>1591950196047</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591950196047</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9016000" />
+    <option name="totallyTimeSpent" value="9286000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -366,7 +372,7 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32911393" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="14" visible="true" weight="0.03452244" />
       <window_info anchor="bottom" id="Problems" order="15" />
       <window_info anchor="bottom" id="Run Dashboard" order="16" weight="0.52704257" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -388,7 +394,8 @@
     <MESSAGE value="项目调整" />
     <MESSAGE value="ignore" />
     <MESSAGE value="调试bug修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="调试bug修改" />
+    <MESSAGE value="ignoreFIle" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignoreFIle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="236" y="2" key="CommitChangelistDialog2" timestamp="1591794580615">
@@ -648,8 +655,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        <state relative-caret-position="208">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>
