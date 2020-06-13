@@ -233,6 +233,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderConsulApplication80" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="cloud-consumerconsul-payment80" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ytz.springcloud.OrderConsulApplication80" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Payment2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="cloud-provider-payment8002" />
       <extension name="coverage">
@@ -259,6 +266,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaymentApplication8006" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="cloud-providerconsul-payment8006" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ytz.springcloud.PaymentApplication8006" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PaymentApplicationZk" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="cloud-provider-payment8004" />
       <extension name="coverage">
@@ -280,6 +294,8 @@
       <item itemvalue="Spring Boot.Payment2Application" />
       <item itemvalue="Spring Boot.PaymentApplicationZk" />
       <item itemvalue="Spring Boot.OrderApplicationZk" />
+      <item itemvalue="Spring Boot.PaymentApplication8006" />
+      <item itemvalue="Spring Boot.OrderConsulApplication80" />
     </list>
     <recent_temporary>
       <list>
