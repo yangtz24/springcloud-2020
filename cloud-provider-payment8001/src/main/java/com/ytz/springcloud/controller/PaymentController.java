@@ -1,5 +1,6 @@
 package com.ytz.springcloud.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.ytz.springcloud.common.CommonResult;
 import com.ytz.springcloud.entities.Payment;
 import com.ytz.springcloud.service.PaymentService;
@@ -11,6 +12,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName: PaymentController
@@ -46,7 +48,10 @@ public class PaymentController {
     public CommonResult<Payment> getOne(@PathVariable Long id) {
         System.out.println("-****************" + port);
         Payment payment = paymentService.getPaymentById(id);
-        return CommonResult.success(payment);
+        if (ObjectUtil.isNotEmpty(payment)) {
+            return CommonResult.success(payment, "查询成功,serverPort-->" + port);
+        }
+        return CommonResult.failed("没有对应记录,查询ID: " + id);
     }
 
     @GetMapping("/discovery")
@@ -67,6 +72,20 @@ public class PaymentController {
 
     @GetMapping("lb")
     public String getPaymentLB() {
+        return port;
+    }
+
+    /**
+     * 测试 feign 超时
+     * @return
+     */
+    @GetMapping("feign/timeout")
+    public String paymentFeignTimeout() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return port;
     }
 }

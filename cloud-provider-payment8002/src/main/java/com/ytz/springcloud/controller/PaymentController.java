@@ -1,5 +1,6 @@
 package com.ytz.springcloud.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.ytz.springcloud.common.CommonResult;
 import com.ytz.springcloud.entities.Payment;
 import com.ytz.springcloud.service.PaymentService;
@@ -39,7 +40,10 @@ public class PaymentController {
     public CommonResult<Payment> getOne(@PathVariable Long id) {
         System.out.println("-****************" + port);
         Payment payment = paymentService.getPaymentById(id);
-        return CommonResult.success(payment);
+        if (ObjectUtil.isNotEmpty(payment)) {
+            return CommonResult.success(payment, "查询成功,serverPort-->" + port);
+        }
+        return CommonResult.failed("没有对应记录,查询ID: " + id);
     }
 
     @GetMapping("lb")
