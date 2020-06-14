@@ -41,4 +41,9 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         return CommonResult.success(payment);
     }
+
+    @GetMapping("lb")
+    public String getPaymentLB() {
+        return port;
+    }
 }
