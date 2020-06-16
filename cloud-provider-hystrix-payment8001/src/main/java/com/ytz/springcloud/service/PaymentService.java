@@ -3,6 +3,9 @@ package com.ytz.springcloud.service;
 import cn.hutool.core.util.IdUtil;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheRemove;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheResult;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
@@ -15,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @Version: V1.0
  */
 @Service
+@Slf4j
 public class PaymentService {
 
     /**
@@ -96,4 +100,43 @@ public class PaymentService {
     }
 
 
+    /**
+     * 缓存测试
+     *    注解说明：
+     *          1、@CacheResult：开启缓存，默认所有参数作为缓存的 key cacheKeyMethod可以通过返回String类型的方法指定key
+     *          2、@CacheKey: 指定缓存的key,可以指定参数或指定参数中的属性值为缓存key.
+     *          3、@CacheRemove: 移除缓存，需要指定commandKey.
+     * @return
+     */
+    @CacheResult(cacheKeyMethod = "getCacheKey")
+    @HystrixCommand(fallbackMethod = "fallbackMethod", commandKey = "getCache")
+    public String getCache(Long id) {
+        log.info("id----->{}", id);
+
+        return "SUCCESS";
+    }
+
+    /**
+     * 生成缓存 key
+     * @param id
+     * @return
+     */
+    public String getCacheKey(Long id) {
+        return String.valueOf(id);
+    }
+    private String fallbackMethod(Long id) {
+        return "查询错误，ID = " + id;
+    }
+
+    /**
+     * 移除缓存-----
+     * @param id
+     * @return
+     */
+    @CacheRemove(commandKey = "getCache", cacheKeyMethod = "getCacheKey")
+    @HystrixCommand
+    public String removeCache(Long id) {
+        log.info("removeCache----id->{}", id);
+        return "SUCCESS";
+    }
 }

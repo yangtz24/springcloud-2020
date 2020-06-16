@@ -1,5 +1,6 @@
 package com.ytz.springcloud.controller;
 
+import com.ytz.springcloud.common.CommonResult;
 import com.ytz.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -65,6 +66,26 @@ public class PaymentController {
         String result = paymentService.paymentCircuitBreaker(id);
         log.info("***result:" + result);
         return result;
+    }
+
+    /**
+     * 测试缓存----添加
+     * @return
+     */
+    @GetMapping("cache/{id}")
+    public CommonResult testCache(@PathVariable("id") Long id) {
+        paymentService.getCache(id);
+        paymentService.getCache(id);
+        paymentService.getCache(id);
+        return new CommonResult(200, "操作成功");
+    }
+
+    @GetMapping("cache/remove/{id}")
+    public CommonResult testRmCache(@PathVariable Long id) {
+        paymentService.getCache(id);
+        paymentService.removeCache(id);
+        paymentService.getCache(id);
+        return new CommonResult(200, "操作成功");
     }
 
 }
