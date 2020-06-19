@@ -80,6 +80,11 @@ public class PaymentController {
         return new CommonResult(200, "操作成功");
     }
 
+    /**
+     * 测试缓存---移除
+     * @param id
+     * @return
+     */
     @GetMapping("cache/remove/{id}")
     public CommonResult testRmCache(@PathVariable Long id) {
         paymentService.getCache(id);
@@ -87,5 +92,7 @@ public class PaymentController {
         paymentService.getCache(id);
         return new CommonResult(200, "操作成功");
     }
+
+
 
 }
