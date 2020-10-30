@@ -37,7 +37,7 @@ public class PaymentController {
     @PostMapping("")
     public CommonResult<Integer> create(@RequestBody Payment payment) {
         int result = paymentService.create(payment);
-        if(result > 0) {
+        if (result > 0) {
             return CommonResult.success(result);
         } else {
             return CommonResult.failed("创建失败");
@@ -77,6 +77,7 @@ public class PaymentController {
 
     /**
      * 测试 feign 超时
+     *
      * @return
      */
     @GetMapping("feign/timeout")

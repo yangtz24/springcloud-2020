@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  */
 @Service
 @Slf4j
-public class StorageServiceImpl  implements StorageService {
+public class StorageServiceImpl implements StorageService {
     @Resource
     private StorageDao storageDao;
 

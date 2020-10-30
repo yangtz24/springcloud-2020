@@ -10,6 +10,7 @@ package com.ytz.springcloud.service;
 public interface IMessageProvider {
     /**
      * 发送消息
+     *
      * @return
      */
     String send();

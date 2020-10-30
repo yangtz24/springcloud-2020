@@ -34,24 +34,25 @@ public class CircleBreakerController {
 //    @SentinelResource(value = "fallback") //没有配置
 //    @SentinelResource(value = "fallback",fallback = "handlerFallback") //配置了fallback的，fallback只负责业务异常
 //    @SentinelResource(value = "fallback",blockHandler = "blockHandler") // 配置了blockHandler，只负责sentinel控制台配置违规
-    @SentinelResource(value = "fallback",fallback = "handlerFallback", blockHandler = "blockHandler",
+    @SentinelResource(value = "fallback", fallback = "handlerFallback", blockHandler = "blockHandler",
             exceptionsToIgnore = {IllegalArgumentException.class}) // 配置了blockHandler和fallback
-    public CommonResult<Payment> fallback(@PathVariable("id") Long id){
+    public CommonResult<Payment> fallback(@PathVariable("id") Long id) {
         CommonResult<Payment> commonResult = restTemplate.getForObject(SERVICE_URL + "/rest/payment/" + id, CommonResult.class);
-        if(id == 4){
+        if (id == 4) {
             throw new IllegalArgumentException("IllegalArgumentException,非法参数异常");
-        }else if(commonResult.getData() == null){
+        } else if (commonResult.getData() == null) {
             throw new NullPointerException("NullPointerException,该ID没有记录，空指针异常");
         }
         return commonResult;
     }
+
     // fallback兜底的方法
-    public CommonResult handlerFallback(Long id, Throwable e){
+    public CommonResult handlerFallback(Long id, Throwable e) {
         Payment payment = new Payment(id, null);
-        return new CommonResult(444, "  兜底异常handler，exception内容:  "+e.getMessage(), payment);
+        return new CommonResult(444, "  兜底异常handler，exception内容:  " + e.getMessage(), payment);
     }
 
-    public CommonResult blockHandler(Long id, BlockException exception){
+    public CommonResult blockHandler(Long id, BlockException exception) {
         Payment payment = new Payment(id, null);
         return new CommonResult<>(445, "    blockHandler-sentinel 限流，无此流水号：blockException:  " + exception.getMessage(), payment);
     }
@@ -63,7 +64,7 @@ public class CircleBreakerController {
     private PaymentService paymentService;
 
     @GetMapping("consumer/payment/{id}")
-    public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id){
+    public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id) {
         return paymentService.payment(id);
     }
 }

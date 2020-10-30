@@ -8,10 +8,10 @@ spring:
 eureka:
   client:
     register-with-eureka: true
-#表示是否从EurekaServer中获取已注册的服务信息， 默认:true 单点可以默认不写，集群必须设置为true,需配合ribbon使用负载均衡
+    #表示是否从EurekaServer中获取已注册的服务信息， 默认:true 单点可以默认不写，集群必须设置为true,需配合ribbon使用负载均衡
     fetch-registry: true
-#服务地址
+    #服务地址
     service-url:
-#      defaultZone: http://localhost:7001/eureka
-#集群
-       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+      #      defaultZone: http://localhost:7001/eureka
+      #集群
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka

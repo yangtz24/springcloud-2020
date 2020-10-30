@@ -23,6 +23,7 @@ public class PaymentService {
 
     /**
      * 正常访问
+     *
      * @param id
      * @return
      */
@@ -34,6 +35,7 @@ public class PaymentService {
      * 超时访问
      * HystrixCommand:一旦调用服务方法失败并抛出了错误信息后,会自动调用@HystrixCommand标注好的fallbckMethod调用类中的指定方法
      * execution.isolation.thread.timeoutInMilliseconds:线程超时时间3秒钟
+     *
      * @param id
      * @return
      */
@@ -56,6 +58,7 @@ public class PaymentService {
 
     /**
      * 服务不可用---服务降级 后 执行的方法
+     *
      * @param id
      * @return
      */
@@ -68,9 +71,10 @@ public class PaymentService {
      *     open: 熔断打开，请求不在进行服务调用当前服务
      *     half-open: 熔断半开，部分请求根据规则调用当前服务，如果当前请求成功且符合规则，可以认为当前服务恢复正常，关闭熔断
      *     closed: 熔断关闭，不会对服务进行熔断
-      */
+     */
     /**
      * 在10秒窗口期中10次请求有6次是请求失败的,断路器将起作用
+     *
      * @param id
      * @return
      */
@@ -92,6 +96,7 @@ public class PaymentService {
 
     /**
      * 服务报错：返回处理的方法
+     *
      * @param id
      * @return
      */
@@ -102,10 +107,11 @@ public class PaymentService {
 
     /**
      * 缓存测试
-     *    注解说明：
-     *          1、@CacheResult：开启缓存，默认所有参数作为缓存的 key cacheKeyMethod可以通过返回String类型的方法指定key
-     *          2、@CacheKey: 指定缓存的key,可以指定参数或指定参数中的属性值为缓存key.
-     *          3、@CacheRemove: 移除缓存，需要指定commandKey.
+     * 注解说明：
+     * 1、@CacheResult：开启缓存，默认所有参数作为缓存的 key cacheKeyMethod可以通过返回String类型的方法指定key
+     * 2、@CacheKey: 指定缓存的key,可以指定参数或指定参数中的属性值为缓存key.
+     * 3、@CacheRemove: 移除缓存，需要指定commandKey.
+     *
      * @return
      */
     @CacheResult(cacheKeyMethod = "getCacheKey")
@@ -118,18 +124,21 @@ public class PaymentService {
 
     /**
      * 生成缓存 key
+     *
      * @param id
      * @return
      */
     public String getCacheKey(Long id) {
         return String.valueOf(id);
     }
+
     private String fallbackMethod(Long id) {
         return "查询错误，ID = " + id;
     }
 
     /**
      * 移除缓存-----
+     *
      * @param id
      * @return
      */

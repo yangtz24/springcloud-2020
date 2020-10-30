@@ -21,40 +21,40 @@ import org.springframework.web.bind.annotation.RestController;
 public class FlowLimitController {
 
     @GetMapping("testA")
-    public String testA(){
+    public String testA() {
         // try { TimeUnit.SECONDS.sleep(3);} catch (InterruptedException e) {e.printStackTrace();}
         return "testA-----";
     }
 
     @GetMapping("testB")
-    public String testB(){
+    public String testB() {
         log.info(Thread.currentThread().getName() + "...testB ");
         return "testB   -----";
     }
 
     @GetMapping("testException")
-    public String testException(){
+    public String testException() {
         log.info("testException 异常比例");
-        int age = 10 /0 ;
+        int age = 10 / 0;
         return "testException -----";
     }
 
     @GetMapping("testExceptionCount")
-    public String testExceptionCount(){
+    public String testExceptionCount() {
         log.info("testExceptionCount 异常数");
-        int num = 10 /0 ;
+        int num = 10 / 0;
         return "testExceptionCount -----";
     }
 
     @GetMapping("testHotKey")
     @SentinelResource(value = "testHotKey1", blockHandler = "dealTestHotKey")
     public String testHotKey(@RequestParam(value = "p1", required = false) String p1,
-                             @RequestParam(value = "p2", required = false) String p2){
+                             @RequestParam(value = "p2", required = false) String p2) {
         // int num = 10 /0;
         return "testHotKey -----";
     }
 
-    public String dealTestHotKey(String p1, String p2, BlockException blockException){
+    public String dealTestHotKey(String p1, String p2, BlockException blockException) {
         return "dealTestHotKey---------";
     }
 

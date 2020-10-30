@@ -20,7 +20,7 @@ public class ConfigClientController {
     private String configInfo;
 
     @GetMapping("config/info")
-    public String getConfigInfo(){
+    public String getConfigInfo() {
         return configInfo;
     }
 }

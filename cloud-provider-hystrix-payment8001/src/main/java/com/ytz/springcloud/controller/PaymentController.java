@@ -58,6 +58,7 @@ public class PaymentController {
     /**
      * 服务熔断
      * http://localhost:8001/rest/payment/circuit/1
+     *
      * @param id
      * @return
      */
@@ -70,6 +71,7 @@ public class PaymentController {
 
     /**
      * 测试缓存----添加
+     *
      * @return
      */
     @GetMapping("cache/{id}")
@@ -82,6 +84,7 @@ public class PaymentController {
 
     /**
      * 测试缓存---移除
+     *
      * @param id
      * @return
      */
@@ -92,7 +95,6 @@ public class PaymentController {
         paymentService.getCache(id);
         return new CommonResult(200, "操作成功");
     }
-
 
 
 }

@@ -26,7 +26,7 @@ import java.util.List;
 @Slf4j
 public class OrderController {
 
-//    public static final String PAYMENT_URL = "http://localhost:8001";
+    //    public static final String PAYMENT_URL = "http://localhost:8001";
     public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
 
@@ -41,6 +41,7 @@ public class OrderController {
 
     /**
      * http://localhost/rest/order/consumer/payment/create
+     *
      * @param payment
      * @return
      */
@@ -51,6 +52,7 @@ public class OrderController {
 
     /**
      * http://localhost/rest/order/consumer/payment/get/{id}
+     *
      * @param id
      * @return
      */
@@ -61,6 +63,7 @@ public class OrderController {
 
     /**
      * http://localhost/rest/order/consumer/payment/getEntity/{id}
+     *
      * @param id
      * @return
      */
@@ -68,7 +71,7 @@ public class OrderController {
     public CommonResult<Payment> getPayment2(@PathVariable Long id) {
         ResponseEntity<CommonResult> responseEntity = restTemplate.getForEntity(PAYMENT_URL + "/rest/payment/" + id, CommonResult.class);
         if (responseEntity.getStatusCode().is2xxSuccessful()) {
-            log.info("statusCode----->{}",responseEntity.getStatusCode());
+            log.info("statusCode----->{}", responseEntity.getStatusCode());
             return responseEntity.getBody();
         }
         return new CommonResult<>(444, "操作失败！！！");

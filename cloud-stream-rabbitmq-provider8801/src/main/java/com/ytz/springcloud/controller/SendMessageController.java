@@ -20,7 +20,7 @@ public class SendMessageController {
     private IMessageProvider messageProvider;
 
     @GetMapping("/sendMessage")
-    public String sendMessage(){
+    public String sendMessage() {
         return messageProvider.send();
     }
 }

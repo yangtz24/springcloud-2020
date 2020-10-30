@@ -22,6 +22,7 @@ import com.ytz.springcloud.entities.Payment;
 public interface PaymentService {
     /**
      * 创建一个支付信息
+     *
      * @param payment
      * @return
      */
@@ -29,6 +30,7 @@ public interface PaymentService {
 
     /**
      * 根据ID查询
+     *
      * @param id
      * @return
      */

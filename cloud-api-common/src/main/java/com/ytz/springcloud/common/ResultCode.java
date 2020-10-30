@@ -3,7 +3,7 @@ package com.ytz.springcloud.common;
 
 /**
  * @ClassName: ResultCode
- * @Description:  枚举了一些常用API操作码
+ * @Description: 枚举了一些常用API操作码
  * @author: yangtianzeng
  * @date: 2020/3/16 8:55
  */

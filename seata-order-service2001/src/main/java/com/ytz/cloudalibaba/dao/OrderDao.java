@@ -16,6 +16,7 @@ public interface OrderDao {
 
     /**
      * 1 新建订单
+     *
      * @param order
      * @return
      */
@@ -23,6 +24,7 @@ public interface OrderDao {
 
     /**
      * 2 修改订单状态,从0改为1
+     *
      * @param userId
      * @param status
      * @return

@@ -15,6 +15,7 @@ public interface StorageDao {
 
     /**
      * 减库存
+     *
      * @param productId
      * @param count
      * @return

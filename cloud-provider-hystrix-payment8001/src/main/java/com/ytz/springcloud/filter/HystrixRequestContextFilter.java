@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * @ClassName: HystrixRequestContextFilter
  * @Description: TODO 处理请求错误
- *  java.lang.IllegalStateException: Request caching is not available. Maybe you need to initialize the HystrixRequestContext?
+ * java.lang.IllegalStateException: Request caching is not available. Maybe you need to initialize the HystrixRequestContext?
  * @author: basketBoy
  * @date: 2020/6/16
  * @Version: V1.0
